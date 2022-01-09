@@ -33,7 +33,11 @@ module.exports = () => {
         swDest: "src-sw.js",
       }),
 
-      new GenerateSW(),
+      new GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
+      }),
+
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "J.A.T.E.",
